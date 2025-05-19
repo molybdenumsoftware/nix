@@ -8,4 +8,6 @@
   outOfBounds = builtins.elemAt [ 1 2 3 ] 100;
   failedCoersion = "${1}";
   failedAddition = 1.0 + "a string";
+  unicodeError = throw "» injecttion: error: v»";
+  repeatedRecursion = { a = let b = {inherit b;}; in b;};
 }
